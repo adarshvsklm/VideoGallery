@@ -125,8 +125,8 @@ const Navbar = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Button sx={{ my: 2, color: 'white', display: 'block' }}>
-              Item
+            <Button sx={{ my: 2, color: 'white', display: 'block' }} onClick={()=>{navigate('/video/upload')}}>
+              Upload Video
             </Button>
           </Box>
 
