@@ -2,6 +2,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import session from 'express-session';
+import dotenv from 'dotenv'
+
+
+dotenv.config()
 
 
 import userRouter from './routes/user.js'
@@ -27,7 +31,7 @@ app.use('/',userRouter)
 
 
 try {
-    mongoose.connect('mongodb://localhost:27017/videoGallery')
+    mongoose.connect(process.env.MONGO_URI)
     db.on('error',console.error.bind(console,'connection error'))
     db.once('open', function () {
         console.log('Database Connected successfully');

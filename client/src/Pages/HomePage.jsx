@@ -6,13 +6,7 @@ import Navbar from '../Components/Navbar/Navbar';
 import { serverUrl } from '../serverUrl';
 
 function HomePage() {
-  const navigate = useNavigate();
-  axios
-    .get(`${serverUrl}/login/check`, { withCredentials: true })
-    .catch((err) => {
-        console.log(err);
-      navigate('/login');
-    });
+ 
   return (
     <div>
       <Navbar />

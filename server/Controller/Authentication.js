@@ -34,7 +34,8 @@ export const login = async (req, res) => {
     console.log(user);
     if (!user) {
       res.status(401).json({ message: 'Invalid credentials' });
-    } 
+    } else{
+      
     const isUserValid = await bcrypt.compare(req.body.password, user.password);
 
     if (isUserValid) {
@@ -44,6 +45,7 @@ export const login = async (req, res) => {
       return res.status(200).json({ message: 'Success', user: user.name });
     } else {
       res.status(401).json({ message: 'Invalid credentials' })
+    }
     }
   } catch (err) {
     console.log(err);
